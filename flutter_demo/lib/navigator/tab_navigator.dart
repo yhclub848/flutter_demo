@@ -52,6 +52,7 @@ class _TabNavigatorState extends State<TabNavigator> {
             changeNavigationBarTite(_currentIndex);
           });
         },
+        /** 底部tabBar */
         items: [
           getBottomItem('首页', Icons.home, 0),
           getBottomItem('发现', Icons.camera_alt, 1),
