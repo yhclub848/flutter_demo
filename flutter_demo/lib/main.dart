@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/navigator/tab_navigator.dart';
-import 'package:flutter_demo/pages/homePage.dart';
 
 void main() {
   runApp(const MyApp());
