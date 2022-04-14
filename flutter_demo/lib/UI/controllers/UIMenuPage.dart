@@ -1,7 +1,9 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_demo/UI/progressIndicatorPage.dart';
+import 'package:flutter_demo/UI/wigets/GridViewWiget.dart';
+import 'package:flutter_demo/UI/wigets/ScrollController.dart';
+import 'package:flutter_demo/UI/wigets/progressIndicatorPage.dart';
 
 class Uimenupage extends StatefulWidget {
   const Uimenupage({Key? key, required this.titleStr}) : super(key: key);
@@ -13,20 +15,17 @@ class Uimenupage extends StatefulWidget {
 class _UimenupageState extends State<Uimenupage> {
   final double itemFontSize = 20.5;
   //下划线widget预定义以供复用。
-  Widget dividerLine = Divider(
+  Widget dividerLine = const Divider(
     color: Colors.grey,
     height: .0,
   );
-  static const loadingTag = "------loading------";
-  var _words = <String>[
+  final loadingTag = "------loading------";
+
+  final _words = <String>[
     "ProgressIndicator",
     "ListView",
-    "AnimatedList",
-    "GirdView",
-    "PageView与页面缓存",
-    "TabBarView",
-    "CustomScrollView 和 Slivers",
-    "嵌套可滚动组件 NestedScrollView",
+    "ScrollController",
+    "GridviewWiget",
     "",
   ];
 
@@ -36,7 +35,7 @@ class _UimenupageState extends State<Uimenupage> {
       appBar: AppBar(
         title: Text(
           widget.titleStr,
-          style: TextStyle(
+          style: const TextStyle(
             color: Colors.white,
             fontSize: 20.0,
           ),
@@ -48,7 +47,6 @@ class _UimenupageState extends State<Uimenupage> {
           // itemExtent: 50.0, //强制高度为50.0
           itemBuilder: (BuildContext context, int index) {
             //显示单词列表项
-            // return ListTile(title: Text(_words[index]));
             return getItem(index);
           },
           separatorBuilder: (BuildContext context, int index) {
@@ -63,7 +61,8 @@ class _UimenupageState extends State<Uimenupage> {
     return GestureDetector(
       child: Container(
         height: 40.0,
-        child: Text(_words[index]),
+        // child: Text(_words[index]),
+        child: ListTile(title: Text(_words[index])),
       ),
       /** item点击事件 */
       onTap: () {
@@ -86,6 +85,10 @@ class _UimenupageState extends State<Uimenupage> {
           return Progressindicatorpage(titleStr: targetStr);
         } else if (targetStr == 'ListView') {
           return Uimenupage(titleStr: targetStr);
+        } else if (targetStr == 'ScrollController') {
+          return ScrollcontrollerTestRute(titleStr: targetStr);
+        } else if (targetStr == 'GridviewWiget') {
+          return GridviewWiget(titleStr: targetStr);
         } else {
           return Progressindicatorpage(titleStr: targetStr);
         }
