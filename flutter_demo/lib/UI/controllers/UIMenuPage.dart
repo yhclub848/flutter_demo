@@ -6,6 +6,7 @@ import 'package:flutter_demo/UI/wigets/ScrollController.dart';
 import 'package:flutter_demo/UI/wigets/progressIndicatorPage.dart';
 
 import '../wigets/FlexLayoutTestRoute.dart';
+import '../wigets/ScrollNotificationTestRoute.dart';
 
 class Uimenupage extends StatefulWidget {
   const Uimenupage({Key? key, required this.titleStr}) : super(key: key);
@@ -30,7 +31,8 @@ class _UimenupageState extends State<Uimenupage> {
     "ListView",
     "ScrollController",
     "GridviewWiget",
-    "弹性布局（Flex）& 流式布局",
+    "弹性布局（Flex）& 流式布局 Flow",
+    "滚动进度百分比NotificationListener",
     "",
   ];
 
@@ -94,8 +96,10 @@ class _UimenupageState extends State<Uimenupage> {
           return ScrollcontrollerTestRute(titleStr: targetStr);
         } else if (targetStr == 'GridviewWiget') {
           return GridviewWiget(titleStr: targetStr);
-        } else if (targetStr == '弹性布局（Flex）& 流式布局') {
+        } else if (targetStr == '弹性布局（Flex）& 流式布局 Flow') {
           return FlexLayoutTestRoute(titleStr: targetStr);
+        } else if (targetStr == '滚动进度百分比NotificationListener') {
+          return ScrollNotificationTestRoute(titleStr: targetStr);
         } else {
           return Progressindicatorpage(titleStr: targetStr);
         }
