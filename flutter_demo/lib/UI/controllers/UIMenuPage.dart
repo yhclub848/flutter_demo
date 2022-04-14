@@ -5,6 +5,8 @@ import 'package:flutter_demo/UI/wigets/GridViewWiget.dart';
 import 'package:flutter_demo/UI/wigets/ScrollController.dart';
 import 'package:flutter_demo/UI/wigets/progressIndicatorPage.dart';
 
+import '../wigets/FlexLayoutTestRoute.dart';
+
 class Uimenupage extends StatefulWidget {
   const Uimenupage({Key? key, required this.titleStr}) : super(key: key);
   final String titleStr;
@@ -26,7 +28,7 @@ class _UimenupageState extends State<Uimenupage> {
     "ListView",
     "ScrollController",
     "GridviewWiget",
-    "",
+    "弹性布局（Flex）& 流式布局",
   ];
 
   @override
@@ -89,6 +91,8 @@ class _UimenupageState extends State<Uimenupage> {
           return ScrollcontrollerTestRute(titleStr: targetStr);
         } else if (targetStr == 'GridviewWiget') {
           return GridviewWiget(titleStr: targetStr);
+        } else if (targetStr == '弹性布局（Flex）& 流式布局') {
+          return FlexLayoutTestRoute(titleStr: targetStr);
         } else {
           return Progressindicatorpage(titleStr: targetStr);
         }
