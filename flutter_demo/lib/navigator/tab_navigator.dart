@@ -1,10 +1,9 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
+import 'package:flutter_demo/UI/controllers/UIMenuPage.dart';
+import 'package:flutter_demo/pages/HomeMainPage.dart';
 import 'package:flutter_demo/pages/MinePage.dart';
 import 'package:flutter_demo/pages/SearchPage.dart';
 import 'package:flutter_demo/pages/discoverPage.dart';
-import 'package:flutter_demo/pages/homePage.dart';
 
 class TabNavigator extends StatefulWidget {
   const TabNavigator({Key? key}) : super(key: key);
@@ -31,11 +30,22 @@ class _TabNavigatorState extends State<TabNavigator> {
             color: Colors.white,
           ),
         ),
+
+        /** 导航栏右侧按钮 */
+        // actions: [
+        //   IconButton(
+        //       onPressed: navigationBarButtonClickAction,
+        //       icon: Icon(Icons.arrow_back_ios)),
+        // ],
+        leading: IconButton(
+          icon: Icon(Icons.menu),
+          onPressed: () => navigationBarButtonClickAction(context),
+        ),
       ),
       body: PageView(
         controller: _controller,
         children: <Widget>[
-          Homepage(),
+          Homemainpage(),
           Discoverpage(),
           Searchpage(),
           Minepage(),
@@ -95,5 +105,28 @@ class _TabNavigatorState extends State<TabNavigator> {
         break;
       default:
     }
+  }
+
+  /** 导航栏按钮点击方法 */
+  navigationBarButtonClickAction(BuildContext kContext) {
+    print('导航按钮点击方法');
+    //push一个新页面
+
+    //第一种写法
+    // Navigator.push(
+    //   context,
+    //   MaterialPageRoute(
+    //     builder: (context) {
+    //       return Uimenupage();
+    //     },
+    //   ),
+    // );
+
+    //第二种写法
+    Navigator.of(context).push(
+      MaterialPageRoute(builder: (context) {
+        return Uimenupage(titleStr: 'flutter控件大赏');
+      }),
+    );
   }
 }
