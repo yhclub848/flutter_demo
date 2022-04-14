@@ -10,12 +10,14 @@ import '../wigets/FlexLayoutTestRoute.dart';
 class Uimenupage extends StatefulWidget {
   const Uimenupage({Key? key, required this.titleStr}) : super(key: key);
   final String titleStr;
+
   @override
   _UimenupageState createState() => _UimenupageState();
 }
 
 class _UimenupageState extends State<Uimenupage> {
   final double itemFontSize = 20.5;
+
   //下划线widget预定义以供复用。
   Widget dividerLine = const Divider(
     color: Colors.grey,
@@ -29,6 +31,7 @@ class _UimenupageState extends State<Uimenupage> {
     "ScrollController",
     "GridviewWiget",
     "弹性布局（Flex）& 流式布局",
+    "",
   ];
 
   @override
