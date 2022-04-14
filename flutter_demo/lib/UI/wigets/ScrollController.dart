@@ -34,7 +34,7 @@ class ScrollcontrollerTestRute extends StatefulWidget {
 }
 
 class _ScrollcontrollerState extends State<ScrollcontrollerTestRute> {
-  ScrollController _controller = ScrollController();
+  final ScrollController _controller = ScrollController();
   bool showToTopBtn = false; //是否显示回到顶部按钮
   String _progress = "0%";
   @override
@@ -82,11 +82,12 @@ class _ScrollcontrollerState extends State<ScrollcontrollerTestRute> {
       floatingActionButton: !showToTopBtn
           ? null
           : FloatingActionButton(
-              child: Icon(Icons.arrow_upward),
+              child: const Icon(Icons.arrow_upward),
               onPressed: () {
                 //返回到顶部时执行动画
                 _controller.animateTo(.0,
-                    duration: Duration(milliseconds: 200), curve: Curves.ease);
+                    duration: const Duration(milliseconds: 200),
+                    curve: Curves.ease);
               },
             ),
     );

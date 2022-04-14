@@ -16,21 +16,45 @@ class _GridviewwigetState extends State<GridviewWiget> {
       ),
       body: Center(
         child: GridView(
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             /** 横向3个widge */
             crossAxisCount: 3,
             /** 子widge 宽高比例为1 */
             childAspectRatio: 1.0,
           ),
-          children: <Widget>[
-            Icon(Icons.ac_unit),
-            Icon(Icons.airport_shuttle),
-            Icon(Icons.all_inclusive),
-            Icon(Icons.beach_access),
-            Icon(Icons.cake),
-            Icon(Icons.free_breakfast),
-            Icon(Icons.boy),
-            Icon(Icons.girl_outlined),
+          children: const [
+            Icon(
+              Icons.ac_unit,
+              color: Colors.green,
+            ),
+            Icon(
+              Icons.airport_shuttle,
+              color: Colors.purple,
+            ),
+            Icon(
+              Icons.all_inclusive,
+              color: Colors.pink,
+            ),
+            Icon(
+              Icons.beach_access,
+              color: Colors.orange,
+            ),
+            Icon(
+              Icons.cake,
+              color: Colors.blueGrey,
+            ),
+            Icon(
+              Icons.free_breakfast,
+              color: Colors.limeAccent,
+            ),
+            Icon(
+              Icons.boy,
+              color: Colors.blue,
+            ),
+            Icon(
+              Icons.girl_outlined,
+              color: Colors.brown,
+            ),
           ],
         ),
       ),

@@ -75,7 +75,7 @@ class _UimenupageState extends State<Uimenupage> {
   }
 
   void onItemClick(int index) {
-    /** 测试点击 */
+    /** 测试点击 非本页面重点*/
     // showCustomDialog(context, index);
     String targetStr = _words[index];
     /** Push到对应控制器 */
