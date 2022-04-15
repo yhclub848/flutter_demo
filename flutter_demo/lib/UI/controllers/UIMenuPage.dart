@@ -5,15 +5,20 @@ import 'package:flutter_demo/UI/wigets/GridViewWiget.dart';
 import 'package:flutter_demo/UI/wigets/ScrollController.dart';
 import 'package:flutter_demo/UI/wigets/progressIndicatorPage.dart';
 
+import '../wigets/FlexLayoutTestRoute.dart';
+import '../wigets/ScrollNotificationTestRoute.dart';
+
 class Uimenupage extends StatefulWidget {
   const Uimenupage({Key? key, required this.titleStr}) : super(key: key);
   final String titleStr;
+
   @override
   _UimenupageState createState() => _UimenupageState();
 }
 
 class _UimenupageState extends State<Uimenupage> {
   final double itemFontSize = 20.5;
+
   //下划线widget预定义以供复用。
   Widget dividerLine = const Divider(
     color: Colors.grey,
@@ -26,6 +31,8 @@ class _UimenupageState extends State<Uimenupage> {
     "ListView",
     "ScrollController",
     "GridviewWiget",
+    "弹性布局（Flex）& 流式布局 Flow",
+    "滚动进度百分比NotificationListener",
     "",
   ];
 
@@ -89,6 +96,10 @@ class _UimenupageState extends State<Uimenupage> {
           return ScrollcontrollerTestRute(titleStr: targetStr);
         } else if (targetStr == 'GridviewWiget') {
           return GridviewWiget(titleStr: targetStr);
+        } else if (targetStr == '弹性布局（Flex）& 流式布局 Flow') {
+          return FlexLayoutTestRoute(titleStr: targetStr);
+        } else if (targetStr == '滚动进度百分比NotificationListener') {
+          return ScrollNotificationTestRoute(titleStr: targetStr);
         } else {
           return Progressindicatorpage(titleStr: targetStr);
         }
