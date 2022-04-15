@@ -30,16 +30,53 @@ class _TabNavigatorState extends State<TabNavigator> {
             color: Colors.white,
           ),
         ),
-
         /** 导航栏右侧按钮 */
-        // actions: [
-        //   IconButton(
-        //       onPressed: navigationBarButtonClickAction,
-        //       icon: Icon(Icons.arrow_back_ios)),
-        // ],
-        leading: IconButton(
-          icon: Icon(Icons.menu),
-          onPressed: () => navigationBarButtonClickAction(context),
+        actions: [
+          IconButton(
+              onPressed: () => navigationBarButtonClickAction(context),
+              icon: Icon(Icons.bookmark_add)),
+        ],
+        // leading: IconButton(
+        //   icon: Icon(Icons.menu),
+        //   onPressed: () => navigationBarButtonClickAction(context),
+        // ),
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.all(0),
+          children: [
+            UserAccountsDrawerHeader(
+              accountName: Text('老鹰展翅飞翔🦅'),
+              accountEmail: Text('zhaishanyingkengni@puhua.com'),
+              currentAccountPicture: CircleAvatar(
+                backgroundImage: NetworkImage(
+                    'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fup.enterdesk.com%2Fedpic_source%2F9e%2F32%2F9a%2F9e329acc0c79523b0204f6ed7ea1e45e.jpg&refer=http%3A%2F%2Fup.enterdesk.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1652579654&t=0e459d3712592d718c283964eebefbc5'),
+              ),
+              // decoration: BoxDecoration(
+              //     //背景图片
+              //     image: DecorationImage(
+              //         image: NetworkImage(
+              //   'https://unsplash.com/photos/MAUO2zOa8O4',
+              // ))),
+            ),
+            ListTile(
+              title: Text('用户反馈'),
+              trailing: Icon(Icons.feedback),
+            ),
+            ListTile(
+              title: Text('系统设置'),
+              trailing: Icon(Icons.settings),
+            ),
+            ListTile(
+              title: Text('我要发布'),
+              trailing: Icon(Icons.send),
+            ),
+            Divider(),
+            ListTile(
+              title: Text('注销'),
+              trailing: Icon(Icons.exit_to_app_sharp),
+            ),
+          ],
         ),
       ),
       body: PageView(
@@ -106,6 +143,9 @@ class _TabNavigatorState extends State<TabNavigator> {
       default:
     }
   }
+
+  /** 左侧抽屉按钮点击方法 */
+  void leftBtnClickAction(BuildContext kContext) {}
 
   /** 导航栏按钮点击方法 */
   navigationBarButtonClickAction(BuildContext kContext) {

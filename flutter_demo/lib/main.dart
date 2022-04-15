@@ -12,13 +12,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: '旭东 Flutter Demo',
+      title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
       initialRoute: "Home_Page",
       routes: {
-        "Home_Page": (context) => TabNavigator(),
+        "Home_Page": (context) => const TabNavigator(),
       },
       // home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
